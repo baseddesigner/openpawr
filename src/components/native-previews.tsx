@@ -62,12 +62,18 @@ function ProfilePreview({ type }: { type: string }) {
           >
             {sample.name.slice(0, 1)}
           </span>
-          <span
-            className="absolute -right-1 -bottom-1 grid h-4 w-4 place-items-center rounded-md text-white shadow-sm ring-1 ring-card"
-            style={{ backgroundColor: sample.brand }}
-          >
-            <BrandGlyph glyph={sample.glyph} className="h-2.5 w-2.5" />
-          </span>
+          {sample.chipBg === null ? (
+            <span className="absolute -right-1 -bottom-1 grid h-4 w-4 place-items-center overflow-hidden rounded-md shadow-sm ring-1 ring-card">
+              <BrandGlyph glyph={sample.glyph} className="h-4 w-4" />
+            </span>
+          ) : (
+            <span
+              className="absolute -right-1 -bottom-1 grid h-4 w-4 place-items-center rounded-md shadow-sm ring-1 ring-card"
+              style={{ backgroundColor: sample.chipBg, color: sample.chipIcon }}
+            >
+              <BrandGlyph glyph={sample.glyph} className="h-2.5 w-2.5" />
+            </span>
+          )}
         </div>
       </div>
       <div className="mt-4.5 min-w-0 flex-1">
@@ -242,7 +248,11 @@ function FinancePreview({ type }: { type: string }) {
     <>
       <div className="flex items-center justify-between gap-2">
         <span className={`flex min-w-0 items-center gap-1.5 rounded-full px-2 py-1 text-[9px] font-semibold tracking-wide uppercase shadow-sm ${sample.dark ? 'bg-white/10 text-white/80' : 'bg-card text-foreground'}`}>
-          <span className="grid h-3.5 w-3.5 shrink-0 place-items-center rounded-full bg-foreground text-[6px] font-bold text-background">P</span>
+          {sample.icon ? (
+            <BrandGlyph glyph={sample.icon} className="h-3.5 w-3.5 shrink-0" />
+          ) : (
+            <span className="grid h-3.5 w-3.5 shrink-0 place-items-center rounded-full bg-foreground text-[6px] font-bold text-background">P</span>
+          )}
           <span className="truncate">{sample.pair}</span>
         </span>
         <span
@@ -295,7 +305,7 @@ function Web3IdentityPreview() {
         >
           j
         </span>
-        <span className="grid h-5 w-5 place-items-center rounded-md bg-[#4f6df5] text-white shadow-sm">
+        <span className="grid h-5 w-5 place-items-center rounded-md bg-[#4A90D9] text-white shadow-sm">
           <BrandGlyph glyph="ens" className="h-3 w-3" />
         </span>
       </div>
@@ -548,11 +558,8 @@ function MiscPreview({ type }: { type: string }) {
     case 'farcaster-channel':
       return (
         <div className="flex h-full flex-col justify-between gap-2">
-          <span
-            className="grid h-10 w-10 place-items-center rounded-xl text-white shadow-md"
-            style={{ background: 'linear-gradient(135deg, #a78bfa, #7c3aed)' }}
-          >
-            <BrandGlyph glyph="farcaster" className="h-5 w-5" />
+          <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-xl shadow-md">
+            <BrandGlyph glyph="farcaster" className="h-10 w-10" />
           </span>
           <div className="min-w-0">
             <p className="truncate text-sm font-semibold text-foreground">{CHANNEL_SAMPLE.name}</p>
