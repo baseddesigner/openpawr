@@ -20,7 +20,7 @@ export function NativeWidgets() {
         widgets.
       </p>
 
-      <div className="fade-up mt-6 grid grid-cols-2 gap-5 md:grid-cols-4">
+      <div className="fade-up mt-6 grid grid-cols-2 gap-5 md:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
         {widgets.map((widget) => (
           <a
             key={widget.type}

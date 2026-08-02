@@ -4,7 +4,7 @@ const CONTRIBUTING_URL = `${REPO_URL}/blob/main/CONTRIBUTING.md`
 export function TopBar() {
   return (
     <header className="sticky top-0 z-10 border-b border-border bg-background/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
+      <div className="flex w-full items-center justify-between px-4 py-3 sm:px-6 lg:px-10">
         <a href="#/" className="flex items-center gap-2.5">
           <img src="/pawr-mark.svg" alt="" className="h-6 w-6" />
           <span className="text-base font-semibold tracking-tight text-foreground">

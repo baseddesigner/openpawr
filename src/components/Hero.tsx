@@ -2,7 +2,7 @@ const REPO_URL = 'https://github.com/baseddesigner/openpawr'
 
 export function Hero() {
   return (
-    <section className="px-5 py-20 text-center md:py-28">
+    <section className="px-4 py-20 text-center sm:px-6 md:py-28 lg:px-10">
       <h1 className="display mx-auto max-w-3xl text-5xl text-foreground md:text-7xl">
         community widgets, live
       </h1>
