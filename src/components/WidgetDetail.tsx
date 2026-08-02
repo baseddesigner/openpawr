@@ -24,14 +24,14 @@ function CopyShortcut({ slug }: { slug: string }) {
   }
 
   return (
-    <div className="flex items-center gap-2">
-      <code className="rounded-lg bg-muted px-3 py-2 text-sm text-foreground">
+    <div className="flex items-center justify-center gap-2">
+      <code className="rounded-full bg-muted px-4 py-2.5 text-sm text-foreground">
         {shortcut}
       </code>
       <button
         type="button"
         onClick={copy}
-        className="cursor-pointer rounded-lg border border-border px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+        className="cursor-pointer rounded-full bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
       >
         {copied ? 'copied' : 'copy'}
       </button>
@@ -47,7 +47,7 @@ export function WidgetDetail({ entry, onBack }: WidgetDetailProps) {
       : [{ name: 'default', config: manifest.defaultConfig }]
 
   return (
-    <div>
+    <div className="fade-up">
       <button
         type="button"
         onClick={onBack}
@@ -56,65 +56,78 @@ export function WidgetDetail({ entry, onBack }: WidgetDetailProps) {
         ← all widgets
       </button>
 
-      <div className="mt-6 grid gap-10 md:grid-cols-2">
-        <div className="space-y-6">
-          {previews.map((fixture) => (
-            <div key={fixture.name}>
-              <WidgetFrame>
-                <Component
-                  config={fixture.config as never}
-                  profile={demoProfile}
-                  size="1x1"
-                  isPreview
-                />
-              </WidgetFrame>
-              <p className="mt-2 px-1 text-xs text-muted-foreground">
-                {fixture.name}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        <div>
-          <div className="flex items-center gap-3">
-            <h1 className="text-2xl font-semibold tracking-tight text-foreground">
-              {manifest.name}
-            </h1>
-            <span className="rounded-full bg-muted px-2.5 py-1 text-xs text-muted-foreground">
-              v{manifest.version}
-            </span>
-          </div>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {manifest.category} · by{' '}
-            <a
-              href={manifest.author.url}
-              target="_blank"
-              rel="noreferrer"
-              className="underline underline-offset-2 hover:text-foreground"
-            >
-              {manifest.author.name}
-            </a>
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-foreground">
-            {manifest.description}
-          </p>
-
-          <div className="mt-8 space-y-3">
-            <p className="text-sm font-medium text-foreground">
-              add it to your page
-            </p>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              paste this shortcut on your pawr page to use the widget.
-            </p>
-            <CopyShortcut slug={manifest.slug} />
-          </div>
-
-          <div className="mt-8 flex gap-6 text-sm text-muted-foreground">
-            <span>{manifest.likeCount} likes</span>
-            <span>{manifest.addCount} adds</span>
-          </div>
-        </div>
+      <div className="mx-auto mt-8 max-w-md">
+        <WidgetFrame>
+          <Component
+            config={previews[0].config as never}
+            profile={demoProfile}
+            size="1x1"
+            isPreview
+          />
+        </WidgetFrame>
       </div>
+
+      <div className="mt-8 text-center">
+        <div className="flex items-center justify-center gap-3">
+          <h1 className="display text-3xl text-foreground md:text-4xl">
+            {manifest.name}
+          </h1>
+          <span className="rounded-full bg-muted px-2.5 py-1 text-xs text-muted-foreground">
+            v{manifest.version}
+          </span>
+        </div>
+        <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
+          {manifest.description}
+        </p>
+      </div>
+
+      <dl className="mx-auto mt-8 grid max-w-md grid-cols-2 gap-4 text-center sm:grid-cols-4">
+        {[
+          ['author', manifest.author.name],
+          ['category', manifest.category],
+          ['likes', String(manifest.likeCount)],
+          ['adds', String(manifest.addCount)],
+        ].map(([label, value]) => (
+          <div key={label} className="rounded-2xl border border-border bg-card p-3">
+            <dt className="text-[10px] font-semibold tracking-wider text-muted-foreground uppercase">
+              {label}
+            </dt>
+            <dd className="mt-1 truncate text-sm text-foreground">{value}</dd>
+          </div>
+        ))}
+      </dl>
+
+      <div className="mt-8 space-y-3 text-center">
+        <p className="text-sm text-muted-foreground">
+          paste this shortcut on your pawr page to add it.
+        </p>
+        <CopyShortcut slug={manifest.slug} />
+      </div>
+
+      {previews.length > 1 && (
+        <div className="mx-auto mt-12 max-w-2xl">
+          <p className="text-center text-xs font-semibold tracking-wider text-muted-foreground uppercase">
+            more ways it looks
+          </p>
+          <div className="mt-4 grid grid-cols-2 gap-5">
+            {previews.slice(1).map((fixture) => (
+              <div key={fixture.name} className="group">
+                <WidgetFrame>
+                  <Component
+                    config={fixture.config as never}
+                    profile={demoProfile}
+                    size="1x1"
+                    isPreview
+                  />
+                </WidgetFrame>
+                <p className="mt-2 text-center text-xs text-muted-foreground">
+                  {fixture.name}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )
 }

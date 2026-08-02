@@ -1,12 +1,15 @@
 @import 'tailwindcss';
 
 @theme {
-  /* semantic palette – light theme, shadcn-style */
-  --color-background: #ffffff;
-  --color-foreground: #09090b;
-  --color-muted: #f4f4f5;
-  --color-muted-foreground: #71717a;
-  --color-border: #e4e4e7;
+  /* pawr brand palette – light canvas */
+  --color-background: #fafafa;
+  --color-card: #ffffff;
+  --color-foreground: #171717;
+  --color-muted: #f3f3f4;
+  --color-muted-foreground: #52555a;
+  --color-secondary: #8f8f90;
+  --color-border: #e6e6e6;
+  --color-accent: #ff9b3d;
 
   /* radii */
   --radius-sm: 4px;
@@ -15,13 +18,9 @@
   --radius-xl: 12px;
   --radius-2xl: 16px;
   --radius-3xl: 24px;
-}
 
-body {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
-  font-family:
-    ui-sans-serif,
+  /* no self-hostable inter woff2 in the pawr app – system stack */
+  --font-sans:
     system-ui,
     -apple-system,
     'Segoe UI',
@@ -29,5 +28,41 @@ body {
     'Helvetica Neue',
     Arial,
     sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+}
+
+/* display headings – tight, heavy */
+.display {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+/* gentle mount animation – css only */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.5s ease-out both;
+}
+
+/* small grid tiles – scale the live preview so content fits */
+@media (max-width: 640px) {
+  .tile-shrink {
+    zoom: 0.75;
+  }
 }
