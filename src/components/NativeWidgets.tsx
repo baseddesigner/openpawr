@@ -1,5 +1,5 @@
 import { listNativeWidgets } from '../lib/native-catalog'
-import { NativePreview } from './native-previews'
+import { NativePreview, BLEED_TYPES } from './native-previews'
 import { WidgetFrame } from './WidgetFrame'
 
 /**
@@ -39,7 +39,7 @@ export function NativeWidgets() {
             </div>
 
             <div className="mt-3">
-              <WidgetFrame shrinkOnMobile>
+              <WidgetFrame shrinkOnMobile bleed={BLEED_TYPES.has(widget.type)}>
                 <NativePreview type={widget.type} />
               </WidgetFrame>
             </div>
