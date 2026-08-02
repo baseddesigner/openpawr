@@ -27,4 +27,6 @@ then read [CONTRIBUTING.md](./CONTRIBUTING.md) – it covers the widget contract
 - `pnpm check-boundary` – boundary linter for widget code
 - `pnpm create-widget <slug>` – scaffold a new widget
 
+dev and build first refresh `src/generated/native-catalog.json` from the pawr.link catalog api; if the fetch fails the committed snapshot stays, so offline builds work.
+
 powering [pawr.link](https://pawr.link)

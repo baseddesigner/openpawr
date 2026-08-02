@@ -49,3 +49,26 @@ export interface RegistryEntry {
   Component: ComponentType<WidgetProps<never>>
   fixtures: WidgetFixture[]
 }
+
+/**
+ * one entry from the pawr.link native widget catalog
+ * (https://pawr.link/api/widgets/catalog, snapshotted to
+ * src/generated/native-catalog.json by scripts/fetch-native-catalog.mjs).
+ * only the fields the playground displays are typed – the catalog
+ * carries more (action, surfaces, data) that we don't need here.
+ */
+export interface NativeCatalogEntry {
+  type: string
+  label: string
+  category: string
+  family: string
+  renderable: boolean
+  allowedSizes: string[]
+  defaultSize: string
+}
+
+export interface NativeCatalog {
+  schema: string
+  fetchedAt: string
+  widgets: NativeCatalogEntry[]
+}

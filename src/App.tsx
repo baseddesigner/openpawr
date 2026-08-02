@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { listWidgets, getWidget } from './lib/registry'
 import { WidgetCard } from './components/WidgetCard'
 import { WidgetDetail } from './components/WidgetDetail'
+import { NativeWidgets } from './components/NativeWidgets'
 
 export function App() {
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null)
@@ -30,15 +31,18 @@ export function App() {
         {selected ? (
           <WidgetDetail entry={selected} onBack={() => setSelectedSlug(null)} />
         ) : (
-          <div className="grid grid-cols-2 gap-x-5 gap-y-8 md:grid-cols-4">
-            {widgets.map((entry) => (
-              <WidgetCard
-                key={entry.manifest.slug}
-                entry={entry}
-                onOpen={setSelectedSlug}
-              />
-            ))}
-          </div>
+          <>
+            <div className="grid grid-cols-2 gap-x-5 gap-y-8 md:grid-cols-4">
+              {widgets.map((entry) => (
+                <WidgetCard
+                  key={entry.manifest.slug}
+                  entry={entry}
+                  onOpen={setSelectedSlug}
+                />
+              ))}
+            </div>
+            <NativeWidgets />
+          </>
         )}
       </main>
 

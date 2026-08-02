@@ -5,7 +5,9 @@
   "type": "module",
   "packageManager": "pnpm@10.28.2",
   "scripts": {
+    "predev": "node scripts/fetch-native-catalog.mjs",
     "dev": "vite",
+    "prebuild": "node scripts/fetch-native-catalog.mjs",
     "build": "vite build",
     "preview": "vite preview",
     "check": "tsc --noEmit",

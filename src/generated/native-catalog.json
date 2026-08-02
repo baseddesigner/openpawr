@@ -1,0 +1,2644 @@
+{
+  "schema": "pawr.widget-catalog.v1",
+  "fetchedAt": "2026-08-02T19:14:20.509Z",
+  "widgets": [
+    {
+      "type": "link",
+      "label": "Link",
+      "category": "content",
+      "family": "content",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x0.5",
+      "action": {
+        "type": null,
+        "label": null,
+        "meaning": null,
+        "agentCardLinkType": "link",
+        "agentCardLabel": "Link"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "title",
+          "customImage",
+          "customFavicon",
+          "ogImage",
+          "url",
+          "domain",
+          "favicon",
+          "updatedAt"
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "label": "Image",
+      "category": "content",
+      "family": "media",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": null,
+        "label": null,
+        "meaning": null,
+        "agentCardLinkType": "image",
+        "agentCardLabel": "Image"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "imageUrl",
+          "caption",
+          "linkUrl",
+          "objectPosition"
+        ]
+      }
+    },
+    {
+      "type": "map",
+      "label": "Map",
+      "category": "content",
+      "family": "content",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "map",
+        "agentCardLabel": "Map"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "latitude",
+          "longitude",
+          "cityName",
+          "zoomLevel",
+          "caption"
+        ]
+      }
+    },
+    {
+      "type": "text-quote",
+      "label": "Text / Quote",
+      "category": "content",
+      "family": "content",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "read",
+        "label": "Read",
+        "meaning": "Open an article, post, note, text, file, or written public content.",
+        "agentCardLinkType": "text",
+        "agentCardLabel": "Text"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "content",
+          "horizontalAlign",
+          "verticalAlign",
+          "backgroundColor",
+          "linkUrl"
+        ]
+      }
+    },
+    {
+      "type": "x-profile",
+      "label": "X Profile",
+      "category": "social",
+      "family": "profile",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "twitter",
+        "agentCardLabel": "X / Twitter"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "x-post",
+      "label": "X Post",
+      "category": "content",
+      "family": "social",
+      "renderable": true,
+      "allowedSizes": [
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "read",
+        "label": "Read",
+        "meaning": "Open an article, post, note, text, file, or written public content.",
+        "agentCardLinkType": "x-post",
+        "agentCardLabel": "X Post"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "postUrl",
+          "authorUsername",
+          "authorDisplayName",
+          "authorPfpUrl",
+          "text",
+          "likeCount",
+          "retweetCount",
+          "replyCount",
+          "embedImage",
+          "originalEmbedImage",
+          "createdAt"
+        ]
+      }
+    },
+    {
+      "type": "youtube-profile",
+      "label": "YouTube",
+      "category": "social",
+      "family": "profile",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "youtube",
+        "agentCardLabel": "YouTube"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "youtube-video",
+      "label": "YouTube Video",
+      "category": "content",
+      "family": "media",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "watch",
+        "label": "Watch",
+        "meaning": "Open playable or visual media such as video, stream, music, podcast, or media embed.",
+        "agentCardLinkType": "youtube-video",
+        "agentCardLabel": "YouTube Video"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "videoId",
+          "title",
+          "channelName"
+        ]
+      }
+    },
+    {
+      "type": "instagram-profile",
+      "label": "Instagram",
+      "category": "social",
+      "family": "profile",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "instagram",
+        "agentCardLabel": "Instagram"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "tiktok-profile",
+      "label": "TikTok",
+      "category": "social",
+      "family": "profile",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "tiktok",
+        "agentCardLabel": "TikTok"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "farcaster-profile",
+      "label": "Farcaster",
+      "category": "social",
+      "family": "profile",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "farcaster",
+        "agentCardLabel": "Farcaster"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "farcaster-cast",
+      "label": "Farcaster Cast",
+      "category": "content",
+      "family": "social",
+      "renderable": true,
+      "allowedSizes": [
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "read",
+        "label": "Read",
+        "meaning": "Open an article, post, note, text, file, or written public content.",
+        "agentCardLinkType": "farcaster-cast",
+        "agentCardLabel": "Farcaster Cast"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "castUrl",
+          "authorUsername",
+          "authorDisplayName",
+          "authorPfpUrl",
+          "text",
+          "likesCount",
+          "recastsCount",
+          "repliesCount",
+          "embedImage",
+          "originalEmbedImage",
+          "timestamp"
+        ]
+      }
+    },
+    {
+      "type": "farcaster-channel",
+      "label": "Farcaster Channel",
+      "category": "social",
+      "family": "social",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "farcaster-channel",
+        "agentCardLabel": "Farcaster Channel"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "channelId",
+          "name",
+          "description",
+          "imageUrl",
+          "followerCount",
+          "leadUsername",
+          "leadPfpUrl"
+        ]
+      }
+    },
+    {
+      "type": "github-profile",
+      "label": "GitHub",
+      "category": "social",
+      "family": "profile",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "github",
+        "agentCardLabel": "GitHub"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "title",
+          "flipped",
+          "username",
+          "displayName",
+          "avatarUrl",
+          "bio",
+          "followers",
+          "contributions",
+          "totalContributions",
+          "isOrganization",
+          "publicRepos",
+          "createdAt",
+          "bannerUrl"
+        ]
+      }
+    },
+    {
+      "type": "unsplash-profile",
+      "label": "Unsplash",
+      "category": "social",
+      "family": "profile",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "unsplash",
+        "agentCardLabel": "Unsplash"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username"
+        ]
+      }
+    },
+    {
+      "type": "unsplash-collection",
+      "label": "Unsplash Collection",
+      "category": "social",
+      "family": "media",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "unsplash-collection",
+        "agentCardLabel": "Unsplash Collection"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "collectionId"
+        ]
+      }
+    },
+    {
+      "type": "telegram",
+      "label": "Telegram",
+      "category": "social",
+      "family": "social",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "contact",
+        "label": "Contact",
+        "meaning": "Start email, phone, chat, DM, group, support, or social-contact flow.",
+        "agentCardLinkType": "telegram",
+        "agentCardLabel": "Telegram"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "discord",
+      "label": "Discord",
+      "category": "social",
+      "family": "social",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "contact",
+        "label": "Contact",
+        "meaning": "Start email, phone, chat, DM, group, support, or social-contact flow.",
+        "agentCardLinkType": "discord",
+        "agentCardLabel": "Discord"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "threads",
+      "label": "Threads",
+      "category": "social",
+      "family": "profile",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "threads",
+        "agentCardLabel": "Threads"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "substack-profile",
+      "label": "Substack",
+      "category": "social",
+      "family": "profile",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "substack",
+        "agentCardLabel": "Substack"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "paragraph-profile",
+      "label": "Paragraph",
+      "category": "social",
+      "family": "profile",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "paragraph",
+        "agentCardLabel": "Paragraph"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "medium-profile",
+      "label": "Medium",
+      "category": "social",
+      "family": "profile",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "medium",
+        "agentCardLabel": "Medium"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "mastodon-profile",
+      "label": "Mastodon",
+      "category": "social",
+      "family": "profile",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "mastodon",
+        "agentCardLabel": "Mastodon"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount",
+          "instance",
+          "statusesCount",
+          "isBot"
+        ]
+      }
+    },
+    {
+      "type": "linkedin",
+      "label": "LinkedIn",
+      "category": "social",
+      "family": "profile",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "linkedin",
+        "agentCardLabel": "LinkedIn"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "facebook-profile",
+      "label": "Facebook",
+      "category": "social",
+      "family": "profile",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "facebook",
+        "agentCardLabel": "Facebook"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "whatsapp",
+      "label": "WhatsApp",
+      "category": "social",
+      "family": "social",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "contact",
+        "label": "Contact",
+        "meaning": "Start email, phone, chat, DM, group, support, or social-contact flow.",
+        "agentCardLinkType": "whatsapp",
+        "agentCardLabel": "WhatsApp"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "substack-post",
+      "label": "Substack Post",
+      "category": "content",
+      "family": "content",
+      "renderable": true,
+      "allowedSizes": [
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "read",
+        "label": "Read",
+        "meaning": "Open an article, post, note, text, file, or written public content.",
+        "agentCardLinkType": "substack-post",
+        "agentCardLabel": "Substack Post"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "postUrl",
+          "title",
+          "subtitle",
+          "noteText",
+          "embedImage",
+          "originalEmbedImage",
+          "authorUsername",
+          "authorDisplayName",
+          "authorPfpUrl",
+          "publishedAt",
+          "likeCount",
+          "commentCount",
+          "restackCount"
+        ]
+      }
+    },
+    {
+      "type": "ens-profile",
+      "label": "ENS Profile",
+      "category": "social",
+      "family": "web3",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "ens",
+        "agentCardLabel": "ENS"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount",
+          "ensName",
+          "address",
+          "twitter",
+          "github",
+          "url",
+          "registrationDate",
+          "expiryDate"
+        ]
+      }
+    },
+    {
+      "type": "bluesky-profile",
+      "label": "Bluesky",
+      "category": "social",
+      "family": "profile",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "bluesky",
+        "agentCardLabel": "Bluesky"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "lens-profile",
+      "label": "Lens",
+      "category": "social",
+      "family": "web3",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "lens",
+        "agentCardLabel": "Lens"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "icebreaker-profile",
+      "label": "Icebreaker",
+      "category": "social",
+      "family": "web3",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "icebreaker",
+        "agentCardLabel": "Icebreaker"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "username",
+          "displayName",
+          "avatarUrl",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "postCount",
+          "subscriberCount",
+          "connectionCount",
+          "ogImageUrl",
+          "ogImageHidden",
+          "latestPost",
+          "memberCount",
+          "memberLabel",
+          "entityType",
+          "isVerified",
+          "inviteHash",
+          "onlineCount",
+          "inviteCode",
+          "guildId",
+          "bannerUrl",
+          "linkedinType",
+          "phoneNumber",
+          "channelId",
+          "profileId",
+          "walletAddress",
+          "jobTitle",
+          "primarySkill",
+          "location",
+          "credentialCount"
+        ]
+      }
+    },
+    {
+      "type": "base-activity",
+      "label": "Base Activity",
+      "category": "data",
+      "family": "web3",
+      "renderable": true,
+      "allowedSizes": [
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": null,
+        "agentCardLabel": null
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": false
+      },
+      "data": {
+        "persistedFields": [
+          "walletAddress",
+          "walletAddresses",
+          "contributions",
+          "totalTxs",
+          "allTimeTxs",
+          "activeDays",
+          "currentStreak",
+          "bestDay",
+          "bestDayDate",
+          "last30dTxs",
+          "tokenTransfers",
+          "gasSpentEth",
+          "contractsInteracted",
+          "ensName",
+          "ensAvatarUrl",
+          "firstTxDate",
+          "fetchedAt",
+          "isFresh",
+          "heatmapLoading",
+          "ethereumLoading",
+          "ethContributions",
+          "ethTotalTxs",
+          "ethAllTimeTxs",
+          "ethActiveDays",
+          "ethCurrentStreak",
+          "ethBestDay",
+          "ethLast30dTxs",
+          "ethGasSpentEth",
+          "ethContractsInteracted",
+          "ethTokenTransfers",
+          "ethFirstTxDate",
+          "activeChain"
+        ]
+      }
+    },
+    {
+      "type": "farcaster-stats",
+      "label": "Farcaster Stats",
+      "category": "data",
+      "family": "data",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "farcaster-stats",
+        "agentCardLabel": "Farcaster Stats"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "title",
+          "fid",
+          "username",
+          "displayName",
+          "pfpUrl",
+          "bio",
+          "followerCount",
+          "followingCount",
+          "casts",
+          "totalCasts",
+          "last30dCasts",
+          "activeDays",
+          "currentStreak",
+          "bestDay",
+          "bestDayDate",
+          "totalLikes",
+          "totalRecasts",
+          "totalReplies",
+          "totalEngagement",
+          "includesReplies",
+          "topCastHash",
+          "topCastText",
+          "topCastUrl",
+          "topCastEngagement",
+          "castsComplete",
+          "castPagesFetched",
+          "oldestCastTimestamp",
+          "backfillCursor",
+          "backfillRetryAfter",
+          "truncated",
+          "isFresh",
+          "heatmapLoading",
+          "fetchedAt"
+        ]
+      }
+    },
+    {
+      "type": "polymarket-event",
+      "label": "Polymarket",
+      "category": "data",
+      "family": "data",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "polymarket",
+        "agentCardLabel": "Polymarket"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "slug",
+          "initialOutcomes"
+        ]
+      }
+    },
+    {
+      "type": "polymarket-breaking",
+      "label": "Polymarket Breaking",
+      "category": "data",
+      "family": "data",
+      "renderable": true,
+      "allowedSizes": [
+        "2x2"
+      ],
+      "defaultSize": "2x2",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": null,
+        "agentCardLabel": null
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": false
+      },
+      "data": {
+        "persistedFields": []
+      }
+    },
+    {
+      "type": "dexscreener-pair",
+      "label": "Dexscreener",
+      "category": "data",
+      "family": "data",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x1"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "token",
+        "agentCardLabel": "Token"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "chainSlug",
+          "pairAddress"
+        ]
+      }
+    },
+    {
+      "type": "geckoterminal-pair",
+      "label": "GeckoTerminal",
+      "category": "data",
+      "family": "data",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x1"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "token",
+        "agentCardLabel": "Token"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "network",
+          "poolAddress"
+        ]
+      }
+    },
+    {
+      "type": "opensea-collection",
+      "label": "NFT Collection",
+      "category": "data",
+      "family": "web3",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "buy",
+        "label": "Buy",
+        "meaning": "Open a product, marketplace, store, checkout, preorder, or commerce destination.",
+        "agentCardLinkType": "opensea-collection",
+        "agentCardLabel": "NFT Collection"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "collectionSlug",
+          "name",
+          "description",
+          "imageUrl",
+          "bannerImageUrl",
+          "floorPrice",
+          "floorPriceCurrency",
+          "totalVolume",
+          "numOwners",
+          "totalSupply",
+          "totalSales",
+          "marketCap",
+          "chain",
+          "fetchedAt"
+        ]
+      }
+    },
+    {
+      "type": "opensea-item",
+      "label": "OpenSea NFT",
+      "category": "data",
+      "family": "web3",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "opensea-item",
+        "agentCardLabel": "NFT"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "chain",
+          "contractAddress",
+          "tokenId",
+          "itemUrl",
+          "name",
+          "description",
+          "imageUrl",
+          "animationUrl",
+          "collectionSlug",
+          "tokenStandard",
+          "ownerCount",
+          "fetchedAt"
+        ]
+      }
+    },
+    {
+      "type": "bankr-fees",
+      "label": "Bankr Fees",
+      "category": "data",
+      "family": "web3",
+      "renderable": true,
+      "allowedSizes": [
+        "2x1"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "bankr",
+        "agentCardLabel": "Bankr"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "tokenAddress"
+        ]
+      }
+    },
+    {
+      "type": "hyperliquid-vault",
+      "label": "Hyperliquid Vault",
+      "category": "data",
+      "family": "data",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": null,
+        "agentCardLabel": null
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": false
+      },
+      "data": {
+        "persistedFields": [
+          "vaultAddress"
+        ]
+      }
+    },
+    {
+      "type": "poaps",
+      "label": "POAPs",
+      "category": "data",
+      "family": "web3",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x1"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "poaps",
+        "agentCardLabel": "POAPs"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "walletAddress",
+          "totalCount",
+          "poaps",
+          "fetchedAt"
+        ]
+      }
+    },
+    {
+      "type": "hackernews",
+      "label": "Hacker News",
+      "category": "data",
+      "family": "data",
+      "renderable": true,
+      "allowedSizes": [
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x2",
+      "action": {
+        "type": "read",
+        "label": "Read",
+        "meaning": "Open an article, post, note, text, file, or written public content.",
+        "agentCardLinkType": "hackernews",
+        "agentCardLabel": "Hacker News"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": []
+      }
+    },
+    {
+      "type": "tip-jar",
+      "label": "Tip Jar",
+      "category": "data",
+      "family": "web3",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "pay",
+        "label": "Pay",
+        "meaning": "Open a payment, tip, donation, subscription, wallet, or checkout-confirmation flow.",
+        "agentCardLinkType": "tip",
+        "agentCardLabel": "Tip Jar"
+      },
+      "surfaces": {
+        "profileEmbedEligible": false,
+        "publicWidgetEmbedEligible": false,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": []
+      }
+    },
+    {
+      "type": "countdown",
+      "label": "Countdown",
+      "category": "data",
+      "family": "content",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "rsvp",
+        "label": "RSVP",
+        "meaning": "Open an event attendance, waitlist, registration, or invite response flow.",
+        "agentCardLinkType": null,
+        "agentCardLabel": null
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": false
+      },
+      "data": {
+        "persistedFields": [
+          "targetDate",
+          "label"
+        ]
+      }
+    },
+    {
+      "type": "section-title",
+      "label": "Section Title",
+      "category": "layout",
+      "family": "layout",
+      "renderable": true,
+      "allowedSizes": [
+        "2x0.5"
+      ],
+      "defaultSize": "2x0.5",
+      "action": {
+        "type": null,
+        "label": null,
+        "meaning": null,
+        "agentCardLinkType": "section",
+        "agentCardLabel": "Section"
+      },
+      "surfaces": {
+        "profileEmbedEligible": false,
+        "publicWidgetEmbedEligible": false,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "title"
+        ]
+      }
+    },
+    {
+      "type": "tracks",
+      "label": "Tracks",
+      "category": "content",
+      "family": "media",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x1"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "watch",
+        "label": "Watch",
+        "meaning": "Open playable or visual media such as video, stream, music, podcast, or media embed.",
+        "agentCardLinkType": null,
+        "agentCardLabel": null
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": false,
+        "agentCardEligible": false
+      },
+      "data": {
+        "persistedFields": [
+          "username"
+        ]
+      }
+    },
+    {
+      "type": "spotify",
+      "label": "Spotify",
+      "category": "content",
+      "family": "media",
+      "renderable": true,
+      "allowedSizes": [
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "watch",
+        "label": "Watch",
+        "meaning": "Open playable or visual media such as video, stream, music, podcast, or media embed.",
+        "agentCardLinkType": "spotify",
+        "agentCardLabel": "Spotify"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "spotifyUrl",
+          "spotifyId",
+          "contentType",
+          "title",
+          "thumbnailUrl"
+        ]
+      }
+    },
+    {
+      "type": "apple-podcast",
+      "label": "Apple Podcasts",
+      "category": "content",
+      "family": "media",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "watch",
+        "label": "Watch",
+        "meaning": "Open playable or visual media such as video, stream, music, podcast, or media embed.",
+        "agentCardLinkType": "apple-podcast",
+        "agentCardLabel": "Apple Podcasts"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "podcastUrl",
+          "podcastId",
+          "country",
+          "title",
+          "artistName",
+          "thumbnailUrl"
+        ]
+      }
+    },
+    {
+      "type": "profile-link",
+      "label": "Profile Link",
+      "category": "social",
+      "family": "content",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "link",
+        "agentCardLabel": "Link"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "title",
+          "customImage",
+          "customFavicon",
+          "ogImage",
+          "url",
+          "domain",
+          "favicon",
+          "updatedAt"
+        ]
+      }
+    },
+    {
+      "type": "showcase-widget",
+      "label": "Showcase Widget",
+      "category": "content",
+      "family": "content",
+      "renderable": true,
+      "allowedSizes": [
+        "2x1"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "showcase-widget",
+        "agentCardLabel": "Showcase"
+      },
+      "surfaces": {
+        "profileEmbedEligible": false,
+        "publicWidgetEmbedEligible": false,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "slug",
+          "profileUrl",
+          "title",
+          "domain",
+          "ogImage",
+          "favicon"
+        ]
+      }
+    },
+    {
+      "type": "video",
+      "label": "Video",
+      "category": "content",
+      "family": "media",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "watch",
+        "label": "Watch",
+        "meaning": "Open playable or visual media such as video, stream, music, podcast, or media embed.",
+        "agentCardLinkType": "video",
+        "agentCardLabel": "Video"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": true,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "videoUrl",
+          "caption",
+          "linkUrl",
+          "objectPosition"
+        ]
+      }
+    },
+    {
+      "type": "file-download",
+      "label": "File",
+      "category": "content",
+      "family": "content",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x0.5",
+        "1x2",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "read",
+        "label": "Read",
+        "meaning": "Open an article, post, note, text, file, or written public content.",
+        "agentCardLinkType": null,
+        "agentCardLabel": null
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": false,
+        "agentCardEligible": false
+      },
+      "data": {
+        "persistedFields": [
+          "title",
+          "customImage",
+          "fileUrl",
+          "fileName",
+          "fileSize",
+          "fileType",
+          "downloadCount"
+        ]
+      }
+    },
+    {
+      "type": "codex-pet",
+      "label": "Codex Pet",
+      "category": "content",
+      "family": "content",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "codex-pet",
+        "agentCardLabel": "Codex pet"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": false,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "petId",
+          "displayName",
+          "description",
+          "spritesheetUrl",
+          "spritesheetHash",
+          "atlasVersion"
+        ]
+      }
+    },
+    {
+      "type": "page-preview",
+      "label": "Page",
+      "category": "content",
+      "family": "content",
+      "renderable": true,
+      "allowedSizes": [
+        "2x2"
+      ],
+      "defaultSize": "2x2",
+      "action": {
+        "type": "visit",
+        "label": "Visit",
+        "meaning": "Open a place, profile, project, page, map, collection, directory, or general destination.",
+        "agentCardLinkType": "page-preview",
+        "agentCardLabel": "Page"
+      },
+      "surfaces": {
+        "profileEmbedEligible": false,
+        "publicWidgetEmbedEligible": false,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "title",
+          "targetPageId",
+          "targetPath",
+          "url",
+          "pageTitle",
+          "favicon"
+        ]
+      }
+    },
+    {
+      "type": "platform-stats",
+      "label": "Platform Stats",
+      "category": "data",
+      "family": "data",
+      "renderable": true,
+      "allowedSizes": [
+        "2x1"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": null,
+        "label": null,
+        "meaning": null,
+        "agentCardLinkType": null,
+        "agentCardLabel": null
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": false,
+        "agentCardEligible": false
+      },
+      "data": {
+        "persistedFields": []
+      }
+    },
+    {
+      "type": "subscribe",
+      "label": "Subscribe",
+      "category": "data",
+      "family": "content",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1",
+        "2x1",
+        "2x2"
+      ],
+      "defaultSize": "2x1",
+      "action": {
+        "type": "pay",
+        "label": "Pay",
+        "meaning": "Open a payment, tip, donation, subscription, wallet, or checkout-confirmation flow.",
+        "agentCardLinkType": null,
+        "agentCardLabel": null
+      },
+      "surfaces": {
+        "profileEmbedEligible": false,
+        "publicWidgetEmbedEligible": false,
+        "agentCardEligible": false
+      },
+      "data": {
+        "persistedFields": []
+      }
+    },
+    {
+      "type": "skill",
+      "label": "Skill",
+      "category": "content",
+      "family": "content",
+      "renderable": true,
+      "allowedSizes": [
+        "2x0.5",
+        "2x1"
+      ],
+      "defaultSize": "2x0.5",
+      "action": {
+        "type": "docs",
+        "label": "Docs",
+        "meaning": "Open documentation, API reference, skill file, whitepaper, README, or developer guide.",
+        "agentCardLinkType": "skill",
+        "agentCardLabel": "Skill"
+      },
+      "surfaces": {
+        "profileEmbedEligible": true,
+        "publicWidgetEmbedEligible": false,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "title",
+          "skillUrl",
+          "favicon"
+        ]
+      }
+    },
+    {
+      "type": "email",
+      "label": "Email",
+      "category": "social",
+      "family": "contact",
+      "renderable": true,
+      "allowedSizes": [
+        "2x0.5"
+      ],
+      "defaultSize": "2x0.5",
+      "action": {
+        "type": "contact",
+        "label": "Contact",
+        "meaning": "Start email, phone, chat, DM, group, support, or social-contact flow.",
+        "agentCardLinkType": "email",
+        "agentCardLabel": "Email"
+      },
+      "surfaces": {
+        "profileEmbedEligible": false,
+        "publicWidgetEmbedEligible": false,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "email",
+          "domain",
+          "title",
+          "favicon"
+        ]
+      }
+    },
+    {
+      "type": "phone",
+      "label": "Phone",
+      "category": "social",
+      "family": "contact",
+      "renderable": true,
+      "allowedSizes": [
+        "2x0.5"
+      ],
+      "defaultSize": "2x0.5",
+      "action": {
+        "type": "contact",
+        "label": "Contact",
+        "meaning": "Start email, phone, chat, DM, group, support, or social-contact flow.",
+        "agentCardLinkType": "phone",
+        "agentCardLabel": "Phone"
+      },
+      "surfaces": {
+        "profileEmbedEligible": false,
+        "publicWidgetEmbedEligible": false,
+        "agentCardEligible": true
+      },
+      "data": {
+        "persistedFields": [
+          "phoneNumber",
+          "title"
+        ]
+      }
+    },
+    {
+      "type": "community",
+      "label": "Community Widget",
+      "category": "content",
+      "family": "content",
+      "renderable": true,
+      "allowedSizes": [
+        "1x1"
+      ],
+      "defaultSize": "1x1",
+      "action": {
+        "type": null,
+        "label": null,
+        "meaning": null,
+        "agentCardLinkType": null,
+        "agentCardLabel": null
+      },
+      "surfaces": {
+        "profileEmbedEligible": false,
+        "publicWidgetEmbedEligible": false,
+        "agentCardEligible": false
+      },
+      "data": {
+        "persistedFields": [
+          "slug",
+          "version",
+          "config"
+        ]
+      }
+    }
+  ]
+}
