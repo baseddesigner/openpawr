@@ -10,7 +10,7 @@
     "prebuild": "node scripts/fetch-native-catalog.mjs",
     "build": "vite build",
     "preview": "vite preview",
-    "check": "tsc --noEmit",
+    "check": "tsc --noEmit && node scripts/check-native-previews.mjs",
     "check-boundary": "node scripts/check-boundary.mjs",
     "create-widget": "node scripts/create-widget.mjs"
   },

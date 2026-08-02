@@ -1,8 +1,11 @@
 import { listNativeWidgets } from '../lib/native-catalog'
+import { NativePreview } from './native-previews'
+import { WidgetFrame } from './WidgetFrame'
 
 /**
- * native widgets – the set built into every pawr.link page.
- * quiet cards linking out, not live previews.
+ * native widgets – the 1x1-capable set built into every pawr.link page.
+ * same card chrome as the community grid, with hardcoded example
+ * previews instead of live widgets.
  */
 export function NativeWidgets() {
   const widgets = listNativeWidgets()
@@ -24,18 +27,31 @@ export function NativeWidgets() {
             href="https://pawr.link"
             target="_blank"
             rel="noreferrer"
-            className="rounded-3xl border border-border bg-card p-4 transition-colors hover:border-secondary"
+            className="group rounded-3xl border border-border bg-card p-4 transition-colors hover:border-secondary"
           >
-            <p className="text-xs font-semibold tracking-wider text-foreground uppercase">
-              {widget.label}
-            </p>
-            <p className="mt-1 text-xs text-muted-foreground">
-              {widget.category}
-            </p>
-            <p className="mt-4 text-xs text-muted-foreground">
-              default {widget.defaultSize} · {widget.allowedSizes.length}{' '}
-              {widget.allowedSizes.length === 1 ? 'size' : 'sizes'}
-            </p>
+            <div className="flex items-center justify-between gap-2">
+              <p className="truncate text-xs font-semibold tracking-wider text-foreground uppercase">
+                {widget.label}
+              </p>
+              <p className="shrink-0 text-xs text-muted-foreground">
+                {widget.category}
+              </p>
+            </div>
+
+            <div className="mt-3">
+              <WidgetFrame shrinkOnMobile>
+                <NativePreview type={widget.type} />
+              </WidgetFrame>
+            </div>
+
+            <div className="mt-3 flex items-center justify-between gap-2">
+              <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] text-muted-foreground">
+                built in
+              </span>
+              <span className="text-xs text-muted-foreground tabular-nums">
+                {widget.defaultSize}
+              </span>
+            </div>
           </a>
         ))}
       </div>
