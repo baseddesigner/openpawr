@@ -2,7 +2,13 @@ import type { ComponentType } from 'react'
 
 export type WidgetSize = '1x1'
 
-export type WidgetCategory = 'utility' | 'social' | 'media' | 'links'
+export type WidgetCategory =
+  | 'utility'
+  | 'social'
+  | 'media'
+  | 'links'
+  | 'fun'
+  | 'data'
 
 export interface WidgetProfile {
   displayName: string

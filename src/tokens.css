@@ -60,6 +60,12 @@ body {
   animation: fade-up 0.5s ease-out both;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+  }
+}
+
 /* small grid tiles – scale the live preview so content fits */
 @media (max-width: 640px) {
   .tile-shrink {
