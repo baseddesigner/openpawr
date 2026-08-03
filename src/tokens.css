@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 
 @theme {
-  /* pawr brand palette – light canvas */
-  --color-background: #fafafa;
+  /* pawr brand palette – pure white canvas */
+  --color-background: #ffffff;
   --color-card: #ffffff;
   --color-foreground: #171717;
   --color-muted: #f3f3f4;

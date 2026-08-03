@@ -47,7 +47,7 @@ export function NativeWidgets() {
               href="https://pawr.link"
               target="_blank"
               rel="noreferrer"
-              className="group relative block aspect-square w-full overflow-hidden rounded-3xl border border-border bg-card transition-colors hover:border-secondary"
+              className={`group relative block aspect-square w-full ${bleed ? 'overflow-hidden rounded-3xl' : ''}`}
             >
               {bleed ? (
                 <div className="absolute inset-0">{preview}</div>
