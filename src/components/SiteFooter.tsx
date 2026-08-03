@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div className="flex items-center gap-2.5">
           <img src="/pawr-mark.svg" alt="" className="h-5 w-5" />
           <span>
-            built by the community · powered by{' '}
+            built by pawr for the community · powered by{' '}
             <a
               href="https://pawr.link"
               target="_blank"
