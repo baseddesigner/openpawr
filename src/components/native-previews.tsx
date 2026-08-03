@@ -21,20 +21,8 @@ import type { BrandGlyphName } from './brand-glyphs'
 /**
  * premium hardcoded example previews for native widgets – static mocks
  * with sample data, everything local/inline (svg, gradients, glyphs).
- * rendered inside the shared inner tile; BLEED_TYPES fill it edge-to-edge.
+ * rendered pixel-true inside the shared 175×176 tile.
  */
-
-/** types whose preview fills the inner tile edge-to-edge (no padding) */
-export const BLEED_TYPES = new Set([
-  'image',
-  'apple-podcast',
-  'tracks',
-  'video',
-  'youtube-video',
-  'opensea-item',
-  'opensea-collection',
-  'unsplash-collection',
-])
 
 function hexA(hex: string, alpha: number): string {
   return `${hex}${Math.round(alpha * 255)
@@ -167,7 +155,7 @@ function MediaPlayerPreview({ type }: { type: string }) {
   const sample = MEDIA_SAMPLES[type]
   if (!sample) return null
   return (
-    <div className="flex h-full w-full flex-col gap-2 bg-[#101013] px-3 pt-11 pb-10">
+    <div className="flex h-full w-full flex-col gap-2 bg-[#101013] p-3">
       <div className="flex items-center gap-2.5">
         <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg shadow-md" style={{ background: sample.art }}>
           <PlayerGlyph glyph={sample.glyph} />

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { RegistryEntry } from '../lib/types'
 import { demoProfile } from '../lib/registry'
-import { WidgetFrame } from './WidgetFrame'
+import { WidgetTile } from './WidgetTile'
 
 interface WidgetDetailProps {
   entry: RegistryEntry
@@ -57,14 +57,14 @@ export function WidgetDetail({ entry, onBack }: WidgetDetailProps) {
       </button>
 
       <div className="mx-auto mt-8 max-w-md">
-        <WidgetFrame>
+        <WidgetTile>
           <Component
             config={previews[0].config as never}
             profile={demoProfile}
             size="1x1"
             isPreview
           />
-        </WidgetFrame>
+        </WidgetTile>
       </div>
 
       <div className="mt-8 text-center">
@@ -109,17 +109,17 @@ export function WidgetDetail({ entry, onBack }: WidgetDetailProps) {
           <p className="text-center text-xs font-semibold tracking-wider text-muted-foreground uppercase">
             more ways it looks
           </p>
-          <div className="mt-4 grid grid-cols-2 gap-5">
+          <div className="mt-4 grid grid-cols-2 justify-items-center gap-5">
             {previews.slice(1).map((fixture) => (
               <div key={fixture.name} className="group">
-                <WidgetFrame>
+                <WidgetTile>
                   <Component
                     config={fixture.config as never}
                     profile={demoProfile}
                     size="1x1"
                     isPreview
                   />
-                </WidgetFrame>
+                </WidgetTile>
                 <p className="mt-2 text-center text-xs text-muted-foreground">
                   {fixture.name}
                 </p>

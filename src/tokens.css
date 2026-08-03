@@ -86,10 +86,3 @@ body {
     border-left-width: 0;
   }
 }
-
-/* small grid tiles – scale the live preview so content fits */
-@media (max-width: 640px) {
-  .tile-shrink {
-    zoom: 0.75;
-  }
-}

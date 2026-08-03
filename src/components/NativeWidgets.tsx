@@ -1,13 +1,13 @@
 import { listNativeWidgets } from '../lib/native-catalog'
 import { NATIVE_EMBEDS, embedUrl } from '../lib/native-embeds'
-import { NativePreview, BLEED_TYPES } from './native-previews'
+import { NativePreview } from './native-previews'
+import { WidgetTile } from './WidgetTile'
 
 /**
- * native widgets – the 1x1-capable set built into every pawr.link page.
- * border-outline square cards with metadata pinned to the corners.
- * types with a public embed id render the real production widget live;
- * the rest show hardcoded example previews. bleed previews fill the
- * square edge-to-edge.
+ * native widgets – the default-1x1 set built into every pawr.link page.
+ * every preview renders pixel-true at 175×176 (the real 1x1 cell size),
+ * centered in its grid square. types with a public embed id render the
+ * real production widget live; the rest show hardcoded example previews.
  */
 export function NativeWidgets() {
   const widgets = listNativeWidgets()
@@ -25,70 +25,52 @@ export function NativeWidgets() {
       <div className="hairline-grid fade-up mt-6 grid grid-cols-1 md:grid-cols-4">
         {widgets.map((widget) => {
           const embedId = NATIVE_EMBEDS[widget.type]
-          const bleed = BLEED_TYPES.has(widget.type)
-          // the embed page renders the 1x1 widget at its native 175×176 px,
-          // anchored top-left – so every live embed gets an exact-size
-          // iframe, scaled up to the preview weight and centered by the
-          // flex box. bleed layout stays for mock previews only.
-          const preview = embedId ? (
-            <div className="h-[176px] w-[175px] overflow-hidden rounded-3xl">
-              <iframe
-                src={embedUrl(embedId)}
-                title={`${widget.label} live example`}
-                loading="lazy"
-                scrolling="no"
-                tabIndex={-1}
-                width={175}
-                height={176}
-                className="pointer-events-none border-0"
-              />
-            </div>
-          ) : (
-            <NativePreview type={widget.type} />
-          )
-          // over art, corner metadata needs a glassy chip to stay readable
-          const cornerChip = bleed ? 'rounded-full bg-white/75 px-2 py-0.5 backdrop-blur-sm' : ''
-
           return (
             <a
               key={widget.type}
               href="https://pawr.link"
               target="_blank"
               rel="noreferrer"
-              className={`group relative block aspect-square w-full bg-background ${bleed ? 'overflow-hidden' : ''}`}
+              className="group relative block aspect-square w-full bg-background"
             >
-              {bleed && !embedId ? (
-                <div className="absolute inset-0">{preview}</div>
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center p-4">
+              <div className="absolute inset-0 flex items-center justify-center p-4">
+                <WidgetTile
+                  padded={!embedId}
+                  className="transition-transform duration-200 group-hover:-translate-y-0.5"
+                >
                   {embedId ? (
-                    preview
+                    <iframe
+                      src={embedUrl(embedId)}
+                      title={`${widget.label} live example`}
+                      loading="lazy"
+                      scrolling="no"
+                      tabIndex={-1}
+                      className="pointer-events-none h-full w-full border-0"
+                    />
                   ) : (
-                    <div className="aspect-square w-full max-w-[260px] transition-transform duration-200 group-hover:-translate-y-0.5">
-                      {preview}
-                    </div>
+                    <NativePreview type={widget.type} />
                   )}
-                </div>
-              )}
+                </WidgetTile>
+              </div>
 
-              <p className={`absolute top-4 left-4 z-10 truncate text-xs font-semibold tracking-wider text-foreground uppercase ${cornerChip}`}>
+              <p className="absolute top-4 left-4 z-10 truncate text-xs font-semibold tracking-wider text-foreground uppercase">
                 {widget.label}
               </p>
-              <p className={`absolute top-4 right-4 z-10 shrink-0 text-xs text-muted-foreground ${cornerChip}`}>
+              <p className="absolute top-4 right-4 z-10 shrink-0 text-xs text-muted-foreground">
                 {widget.category}
               </p>
               <span className="absolute bottom-4 left-4 z-10 flex items-center gap-1.5">
-                <span className={`rounded-full px-2 py-0.5 text-[10px] text-muted-foreground ${bleed ? 'bg-white/75 backdrop-blur-sm' : 'bg-muted'}`}>
+                <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] text-muted-foreground">
                   built in
                 </span>
                 {embedId && (
-                  <span className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] text-muted-foreground ${bleed ? 'bg-white/75 backdrop-blur-sm' : 'bg-muted'}`}>
+                  <span className="flex items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-[10px] text-muted-foreground">
                     <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                     live
                   </span>
                 )}
               </span>
-              <span className={`absolute right-4 bottom-4 z-10 text-xs text-muted-foreground tabular-nums ${cornerChip}`}>
+              <span className="absolute right-4 bottom-4 z-10 text-xs text-muted-foreground tabular-nums">
                 1x1
               </span>
             </a>

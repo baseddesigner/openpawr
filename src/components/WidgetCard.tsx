@@ -1,5 +1,6 @@
 import type { RegistryEntry } from '../lib/types'
 import { demoProfile } from '../lib/registry'
+import { WidgetTile } from './WidgetTile'
 
 interface WidgetCardProps {
   entry: RegistryEntry
@@ -53,9 +54,9 @@ export function WidgetCard({ entry, onOpen }: WidgetCardProps) {
       className="group relative aspect-square w-full cursor-pointer bg-background text-left"
     >
       <div className="absolute inset-0 flex items-center justify-center p-4">
-        <div className="aspect-square w-full max-w-[260px] transition-transform duration-200 group-hover:-translate-y-0.5">
+        <WidgetTile className="transition-transform duration-200 group-hover:-translate-y-0.5">
           <Component config={config} profile={demoProfile} size="1x1" isPreview />
-        </div>
+        </WidgetTile>
       </div>
 
       <p className="absolute top-4 left-4 z-10 text-xs font-semibold tracking-wider text-foreground uppercase">

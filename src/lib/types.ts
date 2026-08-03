@@ -2,6 +2,13 @@ import type { ComponentType } from 'react'
 
 export type WidgetSize = '1x1'
 
+/**
+ * pixel size of a 1x1 widget on a real pawr.link page
+ * (app: BASE_SIZE 175, row height 72 + 32 gap desktop, 76 + 24 mobile).
+ * every preview on the playground renders at exactly this size, 1:1.
+ */
+export const WIDGET_PX = { width: 175, height: 176 } as const
+
 export type WidgetCategory =
   | 'utility'
   | 'social'
