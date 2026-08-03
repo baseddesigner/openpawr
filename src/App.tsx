@@ -3,6 +3,7 @@ import { getWidget } from './lib/registry'
 import { TopBar } from './components/TopBar'
 import { Hero } from './components/Hero'
 import { CommunityWidgets } from './components/CommunityWidgets'
+import { HowItWorks } from './components/HowItWorks'
 import { NativeWidgets } from './components/NativeWidgets'
 import { ContributeBand } from './components/ContributeBand'
 import { SiteFooter } from './components/SiteFooter'
@@ -67,6 +68,7 @@ export function App() {
       <Hero />
       <main className="w-full flex-1 px-4 sm:px-6 lg:px-10">
         <CommunityWidgets onOpen={openWidget} />
+        <HowItWorks />
         <ContributeBand />
         <NativeWidgets />
       </main>

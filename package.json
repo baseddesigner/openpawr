@@ -7,7 +7,7 @@
   "scripts": {
     "predev": "node scripts/fetch-native-catalog.mjs",
     "dev": "vite",
-    "prebuild": "node scripts/fetch-native-catalog.mjs",
+    "prebuild": "node scripts/fetch-native-catalog.mjs && node scripts/build-llms-full.mjs",
     "build": "vite build",
     "preview": "vite preview",
     "check": "tsc --noEmit && node scripts/check-native-previews.mjs",

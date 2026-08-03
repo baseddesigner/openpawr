@@ -27,6 +27,10 @@ then read [CONTRIBUTING.md](./CONTRIBUTING.md) – it covers the widget contract
 - `pnpm check-boundary` – boundary linter for widget code
 - `pnpm create-widget <slug>` – scaffold a new widget
 
-dev and build first refresh `src/generated/native-catalog.json` from the pawr.link catalog api; if the fetch fails the committed snapshot stays, so offline builds work.
+dev and build first refresh `src/generated/native-catalog.json` from the pawr.link catalog api; if the fetch fails the committed snapshot stays, so offline builds work. builds also regenerate `public/llms-full.txt` (gitignored).
+
+## for agents
+
+this is a static spa, so agents should read the text files instead of the html: [`/llms.txt`](https://open.pawr.link/llms.txt) (what this is, key links), [`/llms-full.txt`](https://open.pawr.link/llms-full.txt) (every widget + full contribution guide, generated at build time), and [`/skill.md`](https://open.pawr.link/skill.md) (agent-facing skill for building and submitting a widget).
 
 powering [pawr.link](https://pawr.link)
