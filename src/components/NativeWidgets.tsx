@@ -26,15 +26,23 @@ export function NativeWidgets() {
         {widgets.map((widget) => {
           const embedId = NATIVE_EMBEDS[widget.type]
           const bleed = BLEED_TYPES.has(widget.type)
+          // the embed page renders the 1x1 widget at its native 175×176 px,
+          // anchored top-left – so every live embed gets an exact-size
+          // iframe, scaled up to the preview weight and centered by the
+          // flex box. bleed layout stays for mock previews only.
           const preview = embedId ? (
-            <iframe
-              src={embedUrl(embedId)}
-              title={`${widget.label} live example`}
-              loading="lazy"
-              scrolling="no"
-              tabIndex={-1}
-              className="pointer-events-none h-full w-full border-0"
-            />
+            <div className="h-[176px] w-[175px] scale-[1.48] overflow-hidden rounded-3xl">
+              <iframe
+                src={embedUrl(embedId)}
+                title={`${widget.label} live example`}
+                loading="lazy"
+                scrolling="no"
+                tabIndex={-1}
+                width={175}
+                height={176}
+                className="pointer-events-none border-0"
+              />
+            </div>
           ) : (
             <NativePreview type={widget.type} />
           )
@@ -49,13 +57,17 @@ export function NativeWidgets() {
               rel="noreferrer"
               className={`group relative block aspect-square w-full ${bleed ? 'overflow-hidden rounded-3xl' : ''}`}
             >
-              {bleed ? (
+              {bleed && !embedId ? (
                 <div className="absolute inset-0">{preview}</div>
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center p-4">
-                  <div className="aspect-square w-full max-w-[260px] transition-transform duration-200 group-hover:-translate-y-0.5">
-                    {preview}
-                  </div>
+                  {embedId ? (
+                    preview
+                  ) : (
+                    <div className="aspect-square w-full max-w-[260px] transition-transform duration-200 group-hover:-translate-y-0.5">
+                      {preview}
+                    </div>
+                  )}
                 </div>
               )}
 
