@@ -47,7 +47,7 @@ export function WidgetCard({ entry, onOpen }: WidgetCardProps) {
     <button
       type="button"
       onClick={() => onOpen(manifest.slug)}
-      className="group cursor-pointer rounded-3xl border border-border bg-card p-4 text-left transition-colors hover:border-secondary"
+      className="group cursor-pointer rounded-3xl border border-border bg-card p-4 text-left transition-colors hover:border-secondary md:flex md:aspect-square md:flex-col"
     >
       <div className="flex items-center justify-between gap-2">
         <p className="text-xs font-semibold tracking-wider text-foreground uppercase">
@@ -59,10 +59,12 @@ export function WidgetCard({ entry, onOpen }: WidgetCardProps) {
         </span>
       </div>
 
-      <div className="mt-3">
-        <WidgetFrame shrinkOnMobile>
-          <Component config={config} profile={demoProfile} size="1x1" isPreview />
-        </WidgetFrame>
+      <div className="mt-3 md:flex md:min-h-0 md:flex-1 md:items-center md:justify-center">
+        <div className="w-full md:aspect-square md:h-full md:max-h-[260px] md:w-auto">
+          <WidgetFrame shrinkOnMobile>
+            <Component config={config} profile={demoProfile} size="1x1" isPreview />
+          </WidgetFrame>
+        </div>
       </div>
 
       <div className="mt-3 flex items-center justify-between gap-2">

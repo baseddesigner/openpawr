@@ -20,14 +20,14 @@ export function NativeWidgets() {
         widgets.
       </p>
 
-      <div className="fade-up mt-6 grid grid-cols-2 gap-5 md:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+      <div className="fade-up mt-6 grid grid-cols-2 gap-5 md:grid-cols-4">
         {widgets.map((widget) => (
           <a
             key={widget.type}
             href="https://pawr.link"
             target="_blank"
             rel="noreferrer"
-            className="group rounded-3xl border border-border bg-card p-4 transition-colors hover:border-secondary"
+            className="group rounded-3xl border border-border bg-card p-4 transition-colors hover:border-secondary md:flex md:aspect-square md:flex-col"
           >
             <div className="flex items-center justify-between gap-2">
               <p className="truncate text-xs font-semibold tracking-wider text-foreground uppercase">
@@ -38,10 +38,12 @@ export function NativeWidgets() {
               </p>
             </div>
 
-            <div className="mt-3">
-              <WidgetFrame shrinkOnMobile bleed={BLEED_TYPES.has(widget.type)}>
-                <NativePreview type={widget.type} />
-              </WidgetFrame>
+            <div className="mt-3 md:flex md:min-h-0 md:flex-1 md:items-center md:justify-center">
+              <div className="w-full md:aspect-square md:h-full md:max-h-[260px] md:w-auto">
+                <WidgetFrame shrinkOnMobile bleed={BLEED_TYPES.has(widget.type)}>
+                  <NativePreview type={widget.type} />
+                </WidgetFrame>
+              </div>
             </div>
 
             <div className="mt-3 flex items-center justify-between gap-2">
