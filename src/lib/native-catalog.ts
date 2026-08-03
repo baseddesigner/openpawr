@@ -7,9 +7,9 @@ const snapshot = catalog as NativeCatalog
 const EXCLUDED_TYPES = new Set(['community', 'codex-pet'])
 
 /**
- * native widgets shown on the playground: renderable catalog entries that
- * can render in a 1x1 cell, minus the `community` wrapper (the mount point
- * for the community widgets above) and retired types.
+ * native widgets shown on the playground: renderable catalog entries whose
+ * default size is 1x1, minus the `community` wrapper (the mount point for
+ * the community widgets above) and retired types.
  * coverage of the hardcoded previews is enforced by
  * scripts/check-native-previews.mjs (runs in `pnpm check`).
  */
@@ -19,7 +19,7 @@ export function listNativeWidgets(): NativeCatalogEntry[] {
       (entry) =>
         entry.renderable !== false &&
         !EXCLUDED_TYPES.has(entry.type) &&
-        entry.allowedSizes.includes('1x1'),
+        entry.defaultSize === '1x1',
     )
     .sort((a, b) => a.label.localeCompare(b.label))
 }

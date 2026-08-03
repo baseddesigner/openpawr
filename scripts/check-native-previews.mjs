@@ -27,8 +27,7 @@ const expected = catalog.widgets
     (entry) =>
       entry.renderable !== false &&
       !EXCLUDED_TYPES.has(entry.type) &&
-      Array.isArray(entry.allowedSizes) &&
-      entry.allowedSizes.includes('1x1'),
+      entry.defaultSize === '1x1',
   )
   .map((entry) => entry.type)
   .sort()
@@ -36,8 +35,8 @@ const expected = catalog.widgets
 const missing = expected.filter((type) => !(type in previewMap))
 const stale = Object.keys(previewMap).filter((type) => !expected.includes(type))
 
-for (const type of stale) {
-  console.warn(`check-native-previews: "${type}" is mapped but no longer in the 1x1 catalog – remove it from native-preview-map.json.`)
+if (stale.length > 0) {
+  console.warn(`check-native-previews: ${stale.length} mapped type(s) not currently displayed (${stale.join(', ')}) – kept as fallbacks.`)
 }
 
 if (missing.length > 0) {
