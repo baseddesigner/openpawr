@@ -48,7 +48,7 @@ export function CommunityWidgets({ onOpen }: CommunityWidgetsProps) {
 
       <div
         key={sort}
-        className="fade-up mt-6 grid grid-cols-2 gap-5 md:grid-cols-4"
+        className="fade-up mt-6 grid grid-cols-1 gap-5 md:grid-cols-4"
       >
         {widgets.map((entry) => (
           <WidgetCard

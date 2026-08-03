@@ -167,7 +167,7 @@ function MediaPlayerPreview({ type }: { type: string }) {
   const sample = MEDIA_SAMPLES[type]
   if (!sample) return null
   return (
-    <div className="flex h-full w-full flex-col gap-2 bg-[#101013] p-3">
+    <div className="flex h-full w-full flex-col gap-2 bg-[#101013] px-3 pt-11 pb-10">
       <div className="flex items-center gap-2.5">
         <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg shadow-md" style={{ background: sample.art }}>
           <PlayerGlyph glyph={sample.glyph} />
@@ -223,9 +223,6 @@ function MapPreview() {
         <path d="M-5 58 C 30 50, 70 66, 105 56" stroke="#ffffff" strokeWidth="4.5" fill="none" strokeLinecap="round" />
         <path d="M66 -5 C 60 30, 76 58, 68 105" stroke="#ffffff" strokeWidth="3.5" fill="none" strokeLinecap="round" />
       </svg>
-      <span className="absolute top-2 right-2 grid h-5 w-5 place-items-center rounded-full bg-white/70 text-[8px] font-semibold text-foreground shadow-sm backdrop-blur">
-        N
-      </span>
       <span className="absolute top-[42%] left-1/2 -translate-x-1/2">
         <span className="block h-4 w-4 animate-none rounded-full bg-accent/30" />
       </span>
@@ -402,10 +399,10 @@ function NftPreview({ type }: { type: string }) {
   return (
     <div className="relative h-full w-full overflow-hidden">
       <NftArt variant={sample.art} />
-      <span className="absolute top-2 right-2 rounded-full bg-white/20 px-2 py-0.5 text-[9px] font-medium text-white shadow-sm backdrop-blur">
+      <span className="absolute top-2 left-1/2 -translate-x-1/2 rounded-full bg-white/20 px-2 py-0.5 text-[9px] font-medium text-white shadow-sm backdrop-blur">
         {sample.floor}
       </span>
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-3 pt-8">
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-3 pt-8 text-center">
         <p className="truncate text-xs font-semibold text-white">{sample.name}</p>
         <p className="truncate text-[10px] text-white/60">{sample.collection}</p>
       </div>
@@ -587,7 +584,7 @@ function MiscPreview({ type }: { type: string }) {
               <div key={art} style={{ background: art }} />
             ))}
           </div>
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-2.5 pt-6">
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 to-transparent p-2.5 pt-6 text-center">
             <p className="text-[10px] font-semibold text-white">{COLLECTION_SAMPLE.name}</p>
             <p className="text-[9px] text-white/60">{COLLECTION_SAMPLE.count}</p>
           </div>

@@ -1,13 +1,13 @@
 import { listNativeWidgets } from '../lib/native-catalog'
 import { NATIVE_EMBEDS, embedUrl } from '../lib/native-embeds'
 import { NativePreview, BLEED_TYPES } from './native-previews'
-import { WidgetFrame } from './WidgetFrame'
 
 /**
  * native widgets – the 1x1-capable set built into every pawr.link page.
- * same card chrome as the community grid. types with a public embed id
- * render the real production widget live; the rest show hardcoded
- * example previews.
+ * border-outline square cards with metadata pinned to the corners.
+ * types with a public embed id render the real production widget live;
+ * the rest show hardcoded example previews. bleed previews fill the
+ * square edge-to-edge.
  */
 export function NativeWidgets() {
   const widgets = listNativeWidgets()
@@ -22,61 +22,63 @@ export function NativeWidgets() {
         widgets.
       </p>
 
-      <div className="fade-up mt-6 grid grid-cols-2 gap-5 md:grid-cols-4">
+      <div className="fade-up mt-6 grid grid-cols-1 gap-5 md:grid-cols-4">
         {widgets.map((widget) => {
           const embedId = NATIVE_EMBEDS[widget.type]
+          const bleed = BLEED_TYPES.has(widget.type)
+          const preview = embedId ? (
+            <iframe
+              src={embedUrl(embedId)}
+              title={`${widget.label} live example`}
+              loading="lazy"
+              scrolling="no"
+              tabIndex={-1}
+              className="pointer-events-none h-full w-full border-0"
+            />
+          ) : (
+            <NativePreview type={widget.type} />
+          )
+          // over art, corner metadata needs a glassy chip to stay readable
+          const cornerChip = bleed ? 'rounded-full bg-white/75 px-2 py-0.5 backdrop-blur-sm' : ''
+
           return (
             <a
               key={widget.type}
               href="https://pawr.link"
               target="_blank"
               rel="noreferrer"
-              className="group rounded-3xl border border-border bg-card p-4 transition-colors hover:border-secondary md:flex md:aspect-square md:flex-col"
+              className="group relative block aspect-square w-full overflow-hidden rounded-3xl border border-border bg-card transition-colors hover:border-secondary"
             >
-              <div className="flex items-center justify-between gap-2">
-                <p className="truncate text-xs font-semibold tracking-wider text-foreground uppercase">
-                  {widget.label}
-                </p>
-                <p className="shrink-0 text-xs text-muted-foreground">
-                  {widget.category}
-                </p>
-              </div>
-
-              <div className="mt-3 md:flex md:min-h-0 md:flex-1 md:items-center md:justify-center">
-                <div className="w-full md:aspect-square md:h-full md:max-h-[260px] md:w-auto">
-                  <WidgetFrame shrinkOnMobile bleed={BLEED_TYPES.has(widget.type)}>
-                    {embedId ? (
-                      <iframe
-                        src={embedUrl(embedId)}
-                        title={`${widget.label} live example`}
-                        loading="lazy"
-                        scrolling="no"
-                        tabIndex={-1}
-                        className="pointer-events-none h-full w-full border-0"
-                      />
-                    ) : (
-                      <NativePreview type={widget.type} />
-                    )}
-                  </WidgetFrame>
+              {bleed ? (
+                <div className="absolute inset-0">{preview}</div>
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center p-4">
+                  <div className="aspect-square w-full max-w-[260px] transition-transform duration-200 group-hover:-translate-y-0.5">
+                    {preview}
+                  </div>
                 </div>
-              </div>
+              )}
 
-              <div className="mt-3 flex items-center justify-between gap-2">
-                <span className="flex items-center gap-1.5">
-                  <span className="rounded-full bg-muted px-2 py-0.5 text-[10px] text-muted-foreground">
-                    built in
+              <p className={`absolute top-4 left-4 z-10 truncate text-xs font-semibold tracking-wider text-foreground uppercase ${cornerChip}`}>
+                {widget.label}
+              </p>
+              <p className={`absolute top-4 right-4 z-10 shrink-0 text-xs text-muted-foreground ${cornerChip}`}>
+                {widget.category}
+              </p>
+              <span className="absolute bottom-4 left-4 z-10 flex items-center gap-1.5">
+                <span className={`rounded-full px-2 py-0.5 text-[10px] text-muted-foreground ${bleed ? 'bg-white/75 backdrop-blur-sm' : 'bg-muted'}`}>
+                  built in
+                </span>
+                {embedId && (
+                  <span className={`flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] text-muted-foreground ${bleed ? 'bg-white/75 backdrop-blur-sm' : 'bg-muted'}`}>
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                    live
                   </span>
-                  {embedId && (
-                    <span className="flex items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-[10px] text-muted-foreground">
-                      <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                      live
-                    </span>
-                  )}
-                </span>
-                <span className="text-xs text-muted-foreground tabular-nums">
-                  {widget.defaultSize}
-                </span>
-              </div>
+                )}
+              </span>
+              <span className={`absolute right-4 bottom-4 z-10 text-xs text-muted-foreground tabular-nums ${cornerChip}`}>
+                {widget.defaultSize}
+              </span>
             </a>
           )
         })}

@@ -1,6 +1,5 @@
 import type { RegistryEntry } from '../lib/types'
 import { demoProfile } from '../lib/registry'
-import { WidgetFrame } from './WidgetFrame'
 
 interface WidgetCardProps {
   entry: RegistryEntry
@@ -39,6 +38,10 @@ function HeartIcon() {
   )
 }
 
+/**
+ * community card – a border-outline square with the live widget
+ * centered at a fixed size and metadata pinned to the corners.
+ */
 export function WidgetCard({ entry, onOpen }: WidgetCardProps) {
   const { manifest, Component, fixtures } = entry
   const config = (fixtures[0]?.config ?? manifest.defaultConfig) as never
@@ -47,42 +50,35 @@ export function WidgetCard({ entry, onOpen }: WidgetCardProps) {
     <button
       type="button"
       onClick={() => onOpen(manifest.slug)}
-      className="group cursor-pointer rounded-3xl border border-border bg-card p-4 text-left transition-colors hover:border-secondary md:flex md:aspect-square md:flex-col"
+      className="group relative aspect-square w-full cursor-pointer overflow-hidden rounded-3xl border border-border bg-card text-left transition-colors hover:border-secondary"
     >
-      <div className="flex items-center justify-between gap-2">
-        <p className="text-xs font-semibold tracking-wider text-foreground uppercase">
-          {manifest.name}
-        </p>
-        <span className="flex items-center gap-1 text-xs text-muted-foreground">
-          <HeartIcon />
-          {manifest.likeCount}
-        </span>
-      </div>
-
-      <div className="mt-3 md:flex md:min-h-0 md:flex-1 md:items-center md:justify-center">
-        <div className="w-full md:aspect-square md:h-full md:max-h-[260px] md:w-auto">
-          <WidgetFrame shrinkOnMobile>
-            <Component config={config} profile={demoProfile} size="1x1" isPreview />
-          </WidgetFrame>
+      <div className="absolute inset-0 flex items-center justify-center p-4">
+        <div className="aspect-square w-full max-w-[260px] transition-transform duration-200 group-hover:-translate-y-0.5">
+          <Component config={config} profile={demoProfile} size="1x1" isPreview />
         </div>
       </div>
 
-      <div className="mt-3 flex items-center justify-between gap-2">
-        <span className="flex min-w-0 items-center gap-2">
-          <span
-            className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-semibold text-foreground"
-            style={{ backgroundColor: authorColor(manifest.author.name) }}
-          >
-            {manifest.author.name.charAt(0).toLowerCase()}
-          </span>
-          <span className="truncate text-xs text-muted-foreground">
-            {manifest.author.name}
-          </span>
+      <p className="absolute top-4 left-4 z-10 text-xs font-semibold tracking-wider text-foreground uppercase">
+        {manifest.name}
+      </p>
+      <span className="absolute top-4 right-4 z-10 flex items-center gap-1 text-xs text-muted-foreground">
+        <HeartIcon />
+        {manifest.likeCount}
+      </span>
+      <span className="absolute bottom-4 left-4 z-10 flex min-w-0 items-center gap-2">
+        <span
+          className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-semibold text-foreground"
+          style={{ backgroundColor: authorColor(manifest.author.name) }}
+        >
+          {manifest.author.name.charAt(0).toLowerCase()}
         </span>
-        <span className="shrink-0 text-xs text-muted-foreground">
-          {manifest.category}
+        <span className="truncate text-xs text-muted-foreground">
+          {manifest.author.name}
         </span>
-      </div>
+      </span>
+      <span className="absolute right-4 bottom-4 z-10 text-xs text-muted-foreground">
+        {manifest.category}
+      </span>
     </button>
   )
 }
