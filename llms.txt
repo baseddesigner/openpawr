@@ -1,0 +1,24 @@
+# openpawr
+
+> community widgets for pawr.link pages – a live playground where every widget renders exactly as it looks on a page.
+
+## About
+
+openpawr (open.pawr.link) is the open-source community-widget playground for pawr.link. humans browse live widget previews and add them to their pawr page in one paste; builders fork the repo, scaffold a widget in one command, and open a PR. merged widgets go live here and get ported into the pawr.link app.
+
+## Key links
+
+- [playground](https://open.pawr.link): the site itself
+- [github repo](https://github.com/baseddesigner/openpawr): source, issues, PRs
+- [contributing guide](https://github.com/baseddesigner/openpawr/blob/main/CONTRIBUTING.md): widget anatomy, rules, review process
+- [llms-full.txt](https://open.pawr.link/llms-full.txt): generated list of every widget plus the full contribution guide
+- [skill.md](https://open.pawr.link/skill.md): agent-facing skill for building and submitting a widget
+- [pawr.link](https://pawr.link): the product these widgets live on
+
+## Adding a widget to your page
+
+every widget has a `widget:<slug>` shortcut (visible on its detail view). paste it into the action bar on your pawr.link page and the widget is added – no code, no config required. native widgets (the "native widgets" section) are already built into every pawr.link page.
+
+## Contributing
+
+community widgets are small presentation-only react components: three files (widget.tsx, manifest.ts, fixture.ts), data only via config and the public profile object, no network calls, storage, wallet prompts, or iframes – enforced by a CI boundary check. fork the repo, run `pnpm create-widget <slug>`, build, `pnpm check && pnpm check-boundary`, open a PR with screenshots of each fixture state. full guide in CONTRIBUTING.md and llms-full.txt.
