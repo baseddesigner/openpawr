@@ -77,7 +77,7 @@ export function NativeWidgets() {
                 )}
               </span>
               <span className={`absolute right-4 bottom-4 z-10 text-xs text-muted-foreground tabular-nums ${cornerChip}`}>
-                {widget.defaultSize}
+                1x1
               </span>
             </a>
           )
