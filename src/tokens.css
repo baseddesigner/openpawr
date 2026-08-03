@@ -66,6 +66,27 @@ body {
   }
 }
 
+/* hairline grid separators – inner row/column lines only, clean outer
+   edge (1-col mobile: row lines; 4-col desktop: row + column lines) */
+.hairline-grid > * {
+  border: 0 solid var(--color-border);
+  border-top-width: 1px;
+}
+.hairline-grid > *:first-child {
+  border-top-width: 0;
+}
+@media (min-width: 768px) {
+  .hairline-grid > * {
+    border-left-width: 1px;
+  }
+  .hairline-grid > *:nth-child(-n + 4) {
+    border-top-width: 0;
+  }
+  .hairline-grid > *:nth-child(4n + 1) {
+    border-left-width: 0;
+  }
+}
+
 /* small grid tiles – scale the live preview so content fits */
 @media (max-width: 640px) {
   .tile-shrink {

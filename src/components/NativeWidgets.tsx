@@ -22,7 +22,7 @@ export function NativeWidgets() {
         widgets.
       </p>
 
-      <div className="fade-up mt-6 grid grid-cols-1 gap-5 md:grid-cols-4">
+      <div className="hairline-grid fade-up mt-6 grid grid-cols-1 md:grid-cols-4">
         {widgets.map((widget) => {
           const embedId = NATIVE_EMBEDS[widget.type]
           const bleed = BLEED_TYPES.has(widget.type)
@@ -31,7 +31,7 @@ export function NativeWidgets() {
           // iframe, scaled up to the preview weight and centered by the
           // flex box. bleed layout stays for mock previews only.
           const preview = embedId ? (
-            <div className="h-[176px] w-[175px] scale-[1.48] overflow-hidden rounded-3xl">
+            <div className="h-[176px] w-[175px] overflow-hidden rounded-3xl">
               <iframe
                 src={embedUrl(embedId)}
                 title={`${widget.label} live example`}
@@ -55,7 +55,7 @@ export function NativeWidgets() {
               href="https://pawr.link"
               target="_blank"
               rel="noreferrer"
-              className={`group relative block aspect-square w-full ${bleed ? 'overflow-hidden rounded-3xl' : ''}`}
+              className={`group relative block aspect-square w-full bg-background ${bleed ? 'overflow-hidden' : ''}`}
             >
               {bleed && !embedId ? (
                 <div className="absolute inset-0">{preview}</div>

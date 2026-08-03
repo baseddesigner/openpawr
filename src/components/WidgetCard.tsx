@@ -50,7 +50,7 @@ export function WidgetCard({ entry, onOpen }: WidgetCardProps) {
     <button
       type="button"
       onClick={() => onOpen(manifest.slug)}
-      className="group relative aspect-square w-full cursor-pointer text-left"
+      className="group relative aspect-square w-full cursor-pointer bg-background text-left"
     >
       <div className="absolute inset-0 flex items-center justify-center p-4">
         <div className="aspect-square w-full max-w-[260px] transition-transform duration-200 group-hover:-translate-y-0.5">
